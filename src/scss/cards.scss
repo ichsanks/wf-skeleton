@@ -20,5 +20,21 @@
 	hr {
 		margin: .5rem -1rem;
 		border-color: darken($lightgrey, 10%);
+	}	
+}
+
+.tags {
+	background: $lightblue;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	.tag-header {
+		&>i {
+			padding: .25rem;
+			border-right: 1px solid $lightgrey;
+		}
+		&>span {
+			padding: 0 .25rem;
+		}
 	}
 }

@@ -1,0 +1,18 @@
+extends includes/wireframe.pug
+
+block page
+	.login-box
+		.logo
+			h2 LOGO
+		.cards
+			.card-header Login
+			.card-body
+				form
+					.form-group
+						input.form-control(type="text",placeholder="Username")
+					.form-group
+						input.form-control(type="password",placeholder="Password")
+					hr
+					button.btn.btn-primary.btn-block(type="submit") Sign In
+			.card-footer
+				a(href="#") Forgot password?

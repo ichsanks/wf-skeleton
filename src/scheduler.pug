@@ -1,0 +1,57 @@
+extends includes/wireframe.pug
+
+block page
+	include includes/app/header.pug
+	.page-content
+		.container
+			h2 Scheduler
+			.col-group
+				.col.calendar
+					.calendar-header
+						.calendar-nav
+							.btn-group.btn-group-stick
+								button.btn.btn-default
+									i.fa.fa-angle-left
+								button.btn.btn-default
+									i.fa.fa-angle-right
+						.calendar-date January 8, 2018
+						.calendar-views
+							.btn-group.btn-group-stick
+								button.btn.btn-default Month
+								button.btn.btn-default Week
+								button.btn.btn-default Day
+					.calendar-body
+					.calendar-footer
+				.col.calendar-data
+					btn.btn.btn-primary.btn-block Auto Schedule
+					.cards.card-collapsible
+						.card-header(data-toggle="collapse")
+							h4 Todo List
+						.card-content
+							.card-body
+							.card-footer
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#todolist-modal")
+									i.fa.fa-plus
+									span Add item
+					.cards.card-collapsible
+						.card-header(data-toggle="collapse")
+							h4 Products
+						.card-content
+							.card-body
+							.card-footer
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#product-modal")
+									i.fa.fa-plus
+									span Add product
+								a(href="#",data-toggle="modal")
+									i.fa.fa-sliders
+					.cards.card-collapsible
+						.card-header(data-toggle="collapse")
+							h4 Instructors
+						.card-content
+							.card-body
+							.card-footer
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#instructor-modal")
+									i.fa.fa-plus
+									span Add instructor
+								a(href="#",data-toggle="modal")
+									i.fa.fa-sliders

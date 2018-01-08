@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title Hoherberg Ski School Reservation Wireframe		
+	body
+		#wireframe
+			#sitemap
+				.sitemap-container
+					.sitemap-toggle
+						a(href="#",title="Toggle Sitemap",data-toggle="collapse",data-target="#wireframe")
+							i.fa.fa-angle-left
+					.sitemap-header 
+						h2 Sitemap					
+					.sitemap-content
+						include sitemap.pug
+					.sitemap-note
+						h4 Page Note:
+						block note
+			#app
+				.app-container
+					block page

@@ -1,0 +1,54 @@
+#wireframe {
+	display: flex;
+	height: 100vh;
+	align-items: column;
+	#sitemap {
+		flex: 1 1 auto;
+		width: 15rem;
+		background: $lightgrey;
+		.sitemap-container {
+			position: relative;
+			.sitemap-toggle {
+				position: absolute;
+				right: -1.5rem;
+				font-size: xx-large;				
+				background: rgba(200,200,200,0.5);
+				a {
+					display: block;
+					width: 1.5rem;
+					text-align: center;
+					color: white;					
+				}
+			}
+			.sitemap-header {
+				padding: .5rem 1rem;				
+			}
+			.sitemap-content {
+				padding: .5rem 1rem;
+				border: 1px solid darken($lightgrey,10%);
+				border-style: solid none;
+				overflow-y: auto;
+				height: 70vh;
+			}
+			.sitemap-note {
+				padding: .5rem 1rem;
+				overflow-y: auto;
+				height: 22vh;
+			}
+		}
+	}
+	#app {
+		flex: 1 1 auto;
+		width: calc(100% - 15rem);
+		height: 100vh;
+		overflow: auto;
+	}
+	&.collapse {
+		#sitemap {
+			margin-left: -30rem;
+			.sitemap-toggle a i.fa {
+				transform: rotate(180deg);
+			}		
+		}
+	}
+}

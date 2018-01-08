@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+@import "~normalize.css";
+@import "~include-media/dist/_include-media.scss";
+@import "variables.scss";
+@import "base.scss";
+@import "grid.scss";
+@import "cards.scss";
+@import "navs.scss";
+@import "forms.scss";
+@import "buttons.scss";
+@import "wireframe.scss";
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+#app {
+	.app-container {
+		width: 1400px;
+	}
+}
+
+.login-box {
+	text-align: center;
+	width: 20rem;
+	margin: 0 auto;
+	.logo {
+		width: 100%;
+		height: 5rem;
+		display: block;
+		line-height: 5rem;
+		background: $lightgrey;
+		margin: 5rem 0 1rem;
+	}
+}
+
+.calendar {
+	width: 70%;
+	.calendar-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.calendar-body {
+		background: $lightgrey;
+		height: 600px;
+		overflow: auto;
+		margin-top: .5rem;
+	}
+	&-data {
+		.cards {
+			margin-top: .5rem;
+			& .card-footer {
+				padding: .5rem 1rem;
+			}
+		}
+	}
+}

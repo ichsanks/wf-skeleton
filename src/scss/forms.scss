@@ -1,0 +1,10 @@
+.form-group {
+	.form-control {
+		display: inline;		
+		width: 100%;
+		padding: .5rem 1rem;
+		margin-bottom: 1rem;
+		border: 1px solid darken($lightgrey,20%);
+		box-shadow: none;		
+	}
+}

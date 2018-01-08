@@ -1,0 +1,14 @@
+.container {
+	padding: 0 1rem;
+}
+
+.col-group {
+	display: flex;
+	flex-grow: 1;
+	flex-flow: row;
+	margin: 0 -1rem;
+	.col {
+		flex: 1 1 auto;
+		padding: 0 1rem;	
+	}
+}

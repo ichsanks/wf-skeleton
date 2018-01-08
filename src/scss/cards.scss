@@ -1,0 +1,24 @@
+.cards {
+	border: 1px solid darken($lightgrey, 10%);
+	border-radius: 3px;
+	.card-header {
+		padding: .5rem 1rem;		
+		display: flex;
+		justify-content: space-between;
+		background-color: $lightgrey;
+	}
+	.card-body {
+		padding: 1rem;
+		border-top: 1px solid darken($lightgrey, 10%);
+	}
+	.card-footer {
+		padding: .5rem 1rem 1rem;
+		border-top: 1px solid darken($lightgrey, 10%);
+		display: flex;
+		justify-content: space-between;
+	}
+	hr {
+		margin: .5rem -1rem;
+		border-color: darken($lightgrey, 10%);
+	}
+}

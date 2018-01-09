@@ -32,20 +32,50 @@ $(document).ready(function() {
 	});
 
 	$('.calendar-body').droppable({
-		accept: '.product',
+		accept: '.product:not(.mounted)',
 		drop: function(event, ui) {
-			console.log('drop');
+			 $(ui.draggable)
+			 	.clone()
+			 	.addClass('mounted')
+			 	.append('<div class="tag-body"></div>')
+			 	.appendTo($(this))
+			 	.resizable({
+			 		handles: 'n,s'
+			 	})
+			 	.draggable({
+			 		revert: 'invalid',
+			 		handle: '.fa-arrows'			 		
+			 	})
+			 	.droppable({
+			 		accept: '.instructor',
+			 		drop: function(event, ui) {
+			 			$(ui.draggable)
+			 			.clone()
+			 			.addClass('mounted')
+			 			.appendTo($(this).find('.tag-body'))
+			 		}
+			 	})
+			 	.on('click', '.close', function(e) {
+			 		$(this).closest('.tags').remove();
+			 	})
 		}
 	});
+
 
 	$('.product').droppable({
 		accept: '.instructor',
 		drop: function(event, ui) {
 			console.log('drop');
 		}
-	})
+	});
 
     $( ".instructor, .product" ).draggable({
-    	revert: 'invalid'
+    	revert: 'invalid',
+    	handle: '.fa-arrows',
+    	helper: 'clone'
+    });
+
+    $('.product.mounted').resizable({
+    	animate: true
     });
 });

@@ -28,13 +28,30 @@
 	color: white;
 	cursor: pointer;
 	display: inline-block;
+	border: 1px solid $lightblue;
+	position: relative;
 	.tag-header {
-		&>i {
+		position: relative;
+		&>.handler {
 			padding: .25rem;
 			border-right: 1px solid $lightgrey;
+			display: inline;
+			font-size: smaller;
 		}
 		&>span {
-			padding: 0 .25rem;
+			padding: 0 1.5rem 0 .5rem;			
 		}
+		&>.close {
+			position: absolute;
+			top: 0;
+			right: .25rem;
+			opacity: 0;			
+		}
+	}
+	&:hover .close{
+		opacity: 0.6;
+	}
+	.tag.mounted {
+		opacity: 0.9;
 	}
 }

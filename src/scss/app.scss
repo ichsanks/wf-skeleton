@@ -46,14 +46,69 @@ $fa-font-path: "~font-awesome/fonts";
 		height: 600px;
 		overflow: auto;
 		margin-top: .5rem;
+		.tags:hover {
+			border-color: lighten($lightblue, 30%);
+		}
+		.tags .tag-body {
+			padding: .25rem;
+		}
+		.instructor.mounted+.instructor.mounted {
+			margin-left: 1px;
+		}
 	}
 	&-data {
 		.cards {
 			margin-top: .5rem;
-			font-size: smaller;
+			font-size: smaller;			
 			& .card-footer {
 				padding: .5rem 1rem;
 			}
+			.card-body {
+				height: 10rem;
+				overflow-y: auto;
+				ul li {
+					margin-bottom: .25rem;
+					input[type="checkbox"] {
+						margin-right: .25rem;
+						cursor: pointer;
+					}
+					.tags:hover .close {
+						opacity: 0;
+					}
+				}
+			}
 		}
+	}
+}
+
+.ui-resizable {
+	position: relative;
+	&-e {
+		cursor: e-resize;
+	    width: 7px;
+	    right: -5px;
+	    top: 0;
+	    height: 100%;
+	}
+	&-s {
+		cursor: s-resize;
+	    height: 7px;
+	    width: 100%;
+	    bottom: -5px;
+	    left: 0;
+	}
+	&-se {
+		cursor: se-resize;
+	    width: 12px;
+	    height: 12px;
+	    right: 1px;
+	    bottom: 1px;
+	}
+	&-handle {
+		position: absolute;
+	    font-size: 0.1px;
+	    display: block;
+	    -ms-touch-action: none;
+	    touch-action: none;
 	}
 }

@@ -13,6 +13,8 @@ block page
 								button.btn.btn-default
 									i.fa.fa-angle-left
 								button.btn.btn-default
+									i.fa.fa-calendar
+								button.btn.btn-default
 									i.fa.fa-angle-right
 						.calendar-date January 8, 2018
 						.calendar-views
@@ -40,10 +42,69 @@ block page
 							.card-body
 								ul
 									li
+										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												i.fa.fa-arrows
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
 												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler(title="Drag to calendar to assign schedule for this product")
+													i.fa.fa-arrows
+												span AO
+												.close x
+									li
+										input(type="checkbox",checked)
+										.tags.product
+											.tag-header
+												.handler
+													i.fa.fa-arrows
+												span AO
+												.close x
 							.card-footer
 								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#product-modal")
 									i.fa.fa-plus
@@ -57,7 +118,13 @@ block page
 							.card-body
 								ul
 									li
-										span.tags.instructor Test
+										input(type="checkbox",checked)
+										.tags.instructor
+											.tag-header
+												.handler
+													i.fa.fa-arrows
+												span AO
+												.close x													
 							.card-footer
 								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#instructor-modal")
 									i.fa.fa-plus

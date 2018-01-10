@@ -21,7 +21,7 @@ block page
 							.btn-group.btn-group-stick
 								button.btn.btn-default Month
 								button.btn.btn-default Week
-								button.btn.btn-default Day
+								button.btn.btn-default.active Day
 					.calendar-body
 					.calendar-footer
 				.col.calendar-data
@@ -29,15 +29,19 @@ block page
 					.cards.card-collapsible
 						.card-header(data-toggle="collapse")
 							h4 Todo List
+							.caret
+								i.fa.fa-angle-up
 						.card-content
 							.card-body
 							.card-footer
-								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#todolist-modal")
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#add-todo")
 									i.fa.fa-plus
 									span Add item
 					.cards.card-collapsible
 						.card-header(data-toggle="collapse")
 							h4 Products
+							.caret
+								i.fa.fa-angle-up
 						.card-content
 							.card-body
 								ul
@@ -45,75 +49,69 @@ block page
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler(title="Drag to calendar to assign schedule for this product")
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 									li
 										input(type="checkbox",checked)
 										.tags.product
 											.tag-header
-												.handler
-													i.fa.fa-arrows
+												.time
 												span AO
 												.close x
 							.card-footer
-								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#product-modal")
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#add-product")
 									i.fa.fa-plus
 									span Add product
-								a(href="#",data-toggle="modal")
+								a(href="#",data-toggle="modal",data-target="#filter-product")
 									i.fa.fa-sliders
 					.cards.card-collapsible
 						.card-header(data-toggle="collapse")
 							h4 Instructors
+							.caret
+								i.fa.fa-angle-up
 						.card-content
 							.card-body
 								ul
@@ -121,13 +119,176 @@ block page
 										input(type="checkbox",checked)
 										.tags.instructor
 											.tag-header
-												.handler
-													i.fa.fa-arrows
 												span AO
 												.close x													
 							.card-footer
-								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#instructor-modal")
+								button.btn.btn-default.btn-inverse.btn-xs(data-toggle="modal",data-target="#add-instructor")
 									i.fa.fa-plus
 									span Add instructor
-								a(href="#",data-toggle="modal")
+								a(href="#",data-toggle="modal",data-target="#filter-instructor")
 									i.fa.fa-sliders
+	#add-todo.modal
+		.modal-header
+			h3 Add item todo
+			.close
+				i.fa.fa-remove
+		.modal-body
+			.form-group
+				label Task name
+				input(type="text").form-control
+			.form-group
+				label Reminder
+				input(type="checkbox")
+		.modal-footer
+			button.btn.btn-primary.close Save
+			button.btn.btn-default.close Cancel
+	#add-product.modal
+		.modal-header
+			h3 Add product
+			.close
+				i.fa.fa-remove
+		.modal-body
+			.form-group
+				label Product name
+				input(type="text").form-control
+			.form-group
+				label Product code
+				input(type="text").form-control
+			.form-group
+				label Product key
+				input(type="text").form-control
+			.form-group
+				label Product note
+				textarea(rows="4").form-control
+			.form-group
+				label Product skill
+				select.form-control
+			.form-group
+				label Max participant
+				input(type="text").form-control
+			.form-group
+				label Age range
+				input(type="text").form-control
+			.form-group
+				label Required instructor
+				input(type="text").form-control
+		.modal-footer
+			button.btn.btn-primary.close Save
+			button.btn.btn-default.close Cancel
+	#add-instructor.modal
+		.modal-header
+			h3 Add instructor
+			.close
+				i.fa.fa-remove
+		.modal-body
+			.form-group
+				label First name
+				input(type="text").form-control
+			.form-group
+				label Last name
+				input(type="text").form-control
+			.form-group
+				label Nick name
+				input(type="text").form-control
+			.form-group
+				label Employee ID
+				input(type="text").form-control
+			.form-group
+				label SP media ID
+				input(type="text").form-control
+			.form-group
+				label Email
+				input(type="text").form-control
+			.form-group
+				label Mobile phone
+				input(type="text").form-control
+			.form-group
+				label Receive text message
+				.checkbox-list
+					label
+						input(type="radio")
+						Yes
+					label
+						input(type="radio")
+						No
+			.form-group
+				label Instructor level
+				select.form-control
+			.form-group
+				label Adult level
+				select.form-control
+			.form-group
+				label Child level
+				select.form-control
+			.form-group
+				label Age range
+				input(type="text").form-control
+			.form-group
+				label PSIA level
+				select.form-control
+			.form-group
+				label Tele
+				select.form-control
+			.form-group
+				label Adaptive
+				select.form-control
+			.form-group
+				label Language
+				select.form-control
+			.form-group
+				label Additional note
+				textare(rows="4").form-control
+		.modal-footer
+			button.btn.btn-primary.close Save
+			button.btn.btn-default.close Cancel
+	#filter-product.modal
+		.modal-header
+			h3 Filter product
+			.close
+				i.fa.fa-remove
+		.modal-body
+			.form-group
+				label Product skill
+				.checkbox-list
+			.form-group
+				label Age range
+			.form-group
+				label Current participant
+			.form-group
+				label Max participant
+			.form-group
+				label Current instructor
+			.form-group
+				label Required instructor
+		.modal-footer
+			button.btn.btn-default.pull-left.close Reset
+			button.btn.btn-primary.close Apply
+			button.btn.btn-default.close Cancel
+	#filter-instructor.modal
+		.modal-header
+			h3 Filter instructor
+			.close
+				i.fa.fa-remove
+		.modal-body
+			.form-group
+				label POD
+			.form-group
+				label Adult level
+			.form-group
+				label Child level
+			.form-group
+				label Age range
+			.form-group
+				label PSIA level
+			.form-group
+				label Tele
+			.form-group
+				label Adaptive
+			.form-group
+				label Language
+			.form-group
+				label Availability
+		.modal-footer
+			button.btn.btn-default.pull-left.close Reset
+			button.btn.btn-primary.close Apply
+			button.btn.btn-default.close Cancel

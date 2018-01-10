@@ -13,6 +13,7 @@
 				right: -1.5rem;
 				font-size: xx-large;				
 				background: rgba(200,200,200,0.5);
+				z-index: 10;
 				a {
 					display: block;
 					width: 1.5rem;
@@ -40,8 +41,12 @@
 	#app {
 		flex: 1 1 auto;
 		width: calc(100% - 15rem);
-		height: 100vh;
 		overflow: auto;
+		height: 100vh;		
+		position: relative;
+		.app-container {
+			position: relative;
+		}		
 	}
 	&.collapse {
 		#sitemap {

@@ -1,0 +1,37 @@
+.modal {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, 0);
+	width: 40rem;
+	border-radius: 3px;
+	border: 1px solid darken($lightgrey,10%);
+	display: none;
+	background-color: $offwhite;
+	.modal-header {
+		position: relative;
+		padding: .5rem 1rem;
+		border-bottom: 1px solid darken($lightgrey,10%);
+		border-color: $lightgrey;
+		.close {
+			position: absolute;
+			top: .5rem;
+			right: .5rem;
+			cursor: pointer;
+		}
+	}
+	.modal-body {
+		padding: .5rem 1rem;
+	}
+	.modal-footer {
+		border-top: 1px solid darken($lightgrey, 10%);
+		padding: .5rem 1rem;
+		text-align: right;
+		position: relative;
+		button {
+			&+button {
+				margin-left: .25rem;
+			}
+		}
+	}		
+}

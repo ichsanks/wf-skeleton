@@ -15,7 +15,7 @@ $(document).ready(function() {
 		if($target) {
 			$($target).toggleClass('collapse');
 		} else {
-			$(this).next().toggleClass('collapse');
+			$(this).parent().toggleClass('collapse');
 		}
 	});
 
@@ -29,7 +29,15 @@ $(document).ready(function() {
 	$('[data-toggle="modal"]').on('click', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
+
+		$target = $(this).data('target');
+		$($target).toggle();
 	});
+
+	$('.modal')
+		.on('click','.close', function(e) {
+			$(this).closest('.modal').hide();
+		});
 
 	$('.calendar-body').droppable({
 		accept: '.product:not(.mounted)',
@@ -43,8 +51,7 @@ $(document).ready(function() {
 			 		handles: 'n,s'
 			 	})
 			 	.draggable({
-			 		revert: 'invalid',
-			 		handle: '.fa-arrows'			 		
+			 		revert: 'invalid'			 		
 			 	})
 			 	.droppable({
 			 		accept: '.instructor',
@@ -55,7 +62,10 @@ $(document).ready(function() {
 			 			.appendTo($(this).find('.tag-body'))
 			 		}
 			 	})
-			 	.on('click', '.close', function(e) {
+			 	.on('click', function(e) {
+			 		console.log('clicked');
+			 	})
+			 	.on('click', '.close', function(e) {			 		
 			 		$(this).closest('.tags').remove();
 			 	})
 		}
@@ -71,11 +81,12 @@ $(document).ready(function() {
 
     $( ".instructor, .product" ).draggable({
     	revert: 'invalid',
-    	handle: '.fa-arrows',
     	helper: 'clone'
+    }).on('click', function() {
+    	console.log('clicked');
     });
 
     $('.product.mounted').resizable({
     	animate: true
-    });
+    });    
 });
